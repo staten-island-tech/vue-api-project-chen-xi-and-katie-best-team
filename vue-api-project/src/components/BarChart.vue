@@ -1,6 +1,10 @@
 <template>
     <div>
-
+      <Bar
+    id="my-chart-id"
+    :options="chartOptions"
+    :data="chartData"
+  />
     </div>
 </template>
 
@@ -27,6 +31,6 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
 
 </style>
