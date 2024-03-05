@@ -1,9 +1,11 @@
 <template>
-        <Bar
+    <div>
+      <Bar
     id="my-chart-id"
     :options="chartOptions"
     :data="chartData"
   />
+    </div>
 </template>
 
 <script>
