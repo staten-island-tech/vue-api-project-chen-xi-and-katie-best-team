@@ -14,7 +14,6 @@ export default {
         <RouterLink to="/about">About</RouterLink>
       </nav>
   </header>
-
   <RouterView />
 </template>
 
