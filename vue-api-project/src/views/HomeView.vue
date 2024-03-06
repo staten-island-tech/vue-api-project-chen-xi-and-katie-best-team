@@ -4,9 +4,13 @@
   </div>
 </template>
 
-<script setup>
+<script>
 import BarChart from '@/components/BarChart.vue'
 
+export default {
+  name: 'App',
+  components: { BarChart }
+}
 
 </script>
 
