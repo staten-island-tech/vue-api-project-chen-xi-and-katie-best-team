@@ -1,5 +1,47 @@
-//https://data.cityofnewyork.us/Health/New-York-City-Leading-Causes-of-Death/jb7j-dtam/about_data
+/* //https://data.cityofnewyork.us/Health/New-York-City-Leading-Causes-of-Death/jb7j-dtam/about_data
 
 //https://dev.socrata.com/foundry/data.cityofnewyork.us/jb7j-dtam
 
-//
+export default {
+    name: 'BarChart',
+    props:["chartData"],
+    components: { Bar },
+    data: () => ({
+      deaths: [],
+      deathYear:[],
+      sex:[],
+      leadCause:[],
+  
+    }),
+    async mounted () {
+      this.loading = false
+  
+      try {
+        this.chartData = onMounted()
+  
+        this.loading = true
+      } catch (e) {
+        console.error(e)
+      }
+    }
+  }
+  const deaths = ref("");
+const loading = ref(true);
+
+async function getDeaths(){
+  try{
+  let get = await fetch("https://data.cityofnewyork.us/resource/jb7j-dtam.json")
+  let data = await get.json();
+  deaths.value = data.results;
+  loading.value = false;
+  console.log(deaths.value)
+  } catch(error){
+    console.log(error)
+  }
+}
+
+onMounted(() => {
+  getDeaths();
+});
+  
+  */
