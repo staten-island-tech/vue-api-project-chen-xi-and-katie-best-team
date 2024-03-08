@@ -29,8 +29,7 @@ onMounted(() => {
 
 export default {
   name: 'App',
-  components: { BarChart },
-  functions: { onMounted }
+  components: { BarChart }
 }
 
 
