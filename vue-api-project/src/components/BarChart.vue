@@ -1,10 +1,11 @@
 <template>
   <div class="container">
-    <Bar v-if="loaded" :data="chartData" />
+    <Bar v-if="loading" :data="chartData" />
   </div>
 </template>
 
 <script>
+import { onMounted } from '@/views/HomeView.vue'
 import { Bar } from 'vue-chartjs'
 import { Chart as ChartJS, Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale } from 'chart.js'
 
@@ -12,19 +13,22 @@ ChartJS.register(Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale)
 
 export default {
   name: 'BarChart',
+  props:["chartData"],
   components: { Bar },
   data: () => ({
-    loaded: false,
-    chartData: null
+    deaths: [],
+    deathYear:[],
+    sex:[],
+    leadCause:[],
+
   }),
   async mounted () {
-    this.loaded = false
+    this.loading = false
 
     try {
-      const { userlist } = await fetch("https://data.cityofnewyork.us/resource/jb7j-dtam.json")
-      this.chartdata = userlist
+      this.chartData = onMounted()
 
-      this.loaded = true
+      this.loading = true
     } catch (e) {
       console.error(e)
     }
