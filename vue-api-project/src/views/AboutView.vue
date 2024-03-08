@@ -1,11 +1,13 @@
 <template>
   <div>
-    <apiChart />
+         <apiChart />
   </div>
 </template>
 
 <script>
 import { ref } from "vue";
+import apiChart from '@/components/apiChart.vue'
+
 const dead = ref("");
 async function getDead() {
   try {
@@ -25,6 +27,11 @@ getDead();
 /* onMounted(() => {
   getDead();
 }); */
+
+export default {
+  name: 'AboutView',
+  components: { apiChart }
+}
 </script>
 
 <style scoped>
