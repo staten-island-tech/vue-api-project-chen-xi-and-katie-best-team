@@ -5,24 +5,26 @@
 </template>
 
 <script>
-import apiChart from '@/components/apiChart.vue'
-
-export default {
-  name: 'App2',
-  components: { apiChart }
-}
-
-import { ref, onMounted } from "vue";
+import { ref } from "vue";
 const dead = ref("");
 async function getDead() {
-  let res = await fetch("https://data.cityofnewyork.us/resource/jb7j-dtam.json");
-  let data = await res.json();
-  dead.value = data.results;
+  try {
+    let res = await fetch("https://data.cityofnewyork.us/resource/jb7j-dtam.json");
+    if (Response.status != 200) {
+      throw new Error(response.statusText)
+    }
+    console.log(response);
+    let data = await res.json();
+    console.log(data);
+  } catch (error) {
+    console.log("Sorry, error.")
+  }
+  /* dead.value = data.results; */
 }
-
-onMounted(() => {
+getDead();
+/* onMounted(() => {
   getDead();
-})
+}); */
 </script>
 
 <style scoped>
