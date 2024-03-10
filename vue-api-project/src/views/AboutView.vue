@@ -1,36 +1,34 @@
 <template>
   <div>
-         <apiChart />
+    <apiChart />
   </div>
 </template>
 
 <script>
-import { ref } from "vue";
-import apiChart from '@/components/apiChart.vue'
+import { onMounted } from "vue"
+import { Chart as ChartJS, Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale } from 'chart.js'
+import apiChart from "@/components/apiChart.vue"
+ChartJS.register(Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale)
 
-const dead = ref("");
-async function getDead() {
-  try {
-    let res = await fetch("https://data.cityofnewyork.us/resource/jb7j-dtam.json");
-    if (Response.status != 200) {
-      throw new Error(response.statusText)
-    }
-    console.log(response);
-    let data = await res.json();
-    console.log(data);
-  } catch (error) {
-    console.log("Sorry, error.")
+async function getDeaths(){
+  try{
+  let get = await fetch("https://data.cityofnewyork.us/resource/jb7j-dtam.json")
+  let data = await get.json();
+  console.log(data)
+  return data
+  } catch(error){
+    console.log(error)
   }
-  /* dead.value = data.results; */
 }
-getDead();
-/* onMounted(() => {
-  getDead();
-}); */
+onMounted(() => {
+  getDeaths()});
 
 export default {
-  name: 'AboutView',
-  components: { apiChart }
+  name: 'App',
+  components: { apiChart },
+  data() {
+    return apiChart
+  }
 }
 </script>
 
