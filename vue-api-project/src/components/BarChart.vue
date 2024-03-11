@@ -1,40 +1,28 @@
 <template>
 <div class="container">
-    <Bar v-if="loaded" :data="chartData" />
+    <Bar v-if="loaded" :mounted="userlist" />
   </div>
 </template>
 
 <script>
-import {ref, onMounted } from "vue"
 import { Bar } from 'vue-chartjs'
 import { Chart as ChartJS, Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale } from 'chart.js'
 
 ChartJS.register(Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale)
 
-async function getDeaths(){
-  try{
-  let get = await fetch("https://data.cityofnewyork.us/resource/jb7j-dtam.json")
-  let data = await get.json();
-  console.log(data)
-  return data
-  } catch(error){
-    console.log(error)
-  }
-}
-
-onMounted(() => {
-  getDeaths();
-});
-
 export default {
   name: 'BarChart',
   components: { Bar },
+  props: {
+    death: String,
+    year: Number
+  },
+  setup(props){
+    console.log(props.test)
+  },
 
-  data: () => ({
-    loaded: false,
-    chartData: null
-  }),
   async mounted () {
+
     this.loaded = false
 
     try {
@@ -42,6 +30,7 @@ export default {
       this.chartdata = userlist
 
       this.loaded = true
+      console.log(this.death)
     } catch (e) {
       console.error(e)
     }
