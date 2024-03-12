@@ -17,8 +17,12 @@ export default {
     death: String,
     year: Number
   },
+  data: () => ({
+    loaded: false,
+    chartData: null
+  }),
   setup(props){
-    console.log(props.test)
+    console.log(props.death)
   },
 
   async mounted () {

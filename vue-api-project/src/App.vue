@@ -22,7 +22,6 @@ header {
   flex-wrap: wrap;
 }
 
-
 nav {
   width: 100%;
   font-size: 12px;
