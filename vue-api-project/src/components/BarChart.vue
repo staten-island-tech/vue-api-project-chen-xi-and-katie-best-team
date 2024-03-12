@@ -29,6 +29,17 @@ onMounted(() => {
 export default {
   name: 'BarChart',
   components: { Bar },
+  props: {
+    death: String,
+    year: Number
+  },
+  data: () => ({
+    loaded: false,
+    chartData: null
+  }),
+  setup(props){
+    console.log(props.death)
+  },
 
   data: () => ({
     loaded: false,

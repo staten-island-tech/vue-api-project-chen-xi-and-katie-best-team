@@ -20,14 +20,16 @@ async function getDeaths(){
     console.log(error)
   }
 }
-onMounted(() => {
-  getDeaths()});
-
 export default {
   name: 'App',
   components: { apiChart },
   data() {
     return apiChart
+  },
+  async setup() {
+    onMounted(() => {
+      getDeaths();
+    });
   }
 }
 </script>
