@@ -1,6 +1,6 @@
 <template>
 <div class="container">
-    <Bar v-if="loaded" :mounted="userlist" />
+    <Bar v-if="loaded" :data="chartData" /> 
   </div>
 </template>
 
@@ -13,13 +13,13 @@ ChartJS.register(Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale)
 export default {
   name: 'BarChart',
   components: { Bar },
-  props: {
-    death: String,
-    year: Number
-  },
-  setup(props){
-    console.log(props.test)
-  },
+  data: () => ({
+    loaded: Boolean,
+    chartData: {
+      labels: [],
+      datasets: []
+    }
+  }),
 
   async mounted () {
 
@@ -27,10 +27,9 @@ export default {
 
     try {
       const { userlist } = await fetch("https://data.cityofnewyork.us/resource/jb7j-dtam.json")
-      this.chartdata = userlist
-
+      this.chartData = userlist
       this.loaded = true
-      console.log(this.death)
+      console.log(this.chartData)
     } catch (e) {
       console.error(e)
     }
