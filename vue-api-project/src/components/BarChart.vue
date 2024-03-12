@@ -13,13 +13,17 @@ ChartJS.register(Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale)
 export default {
   name: 'BarChart',
   components: { Bar },
+  props: {
+    death: String,
+    year: Number
+  },
   data: () => ({
-    loaded: Boolean,
-    chartData: {
-      labels: [],
-      datasets: []
-    }
+    loaded: false,
+    chartData: null
   }),
+  setup(props){
+    console.log(props.death)
+  },
 
   async mounted () {
 
