@@ -29,7 +29,6 @@ export default {
       let { userlist } = await getData.json();
       this.chartData = userlist
       this.data.chartData.labels = []
-
       this.loaded = true
     } catch (e) {
       console.error(e)

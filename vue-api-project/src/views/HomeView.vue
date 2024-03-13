@@ -27,11 +27,9 @@ export default {
   data() {
     return death
   },
-  async setup() {
-    onMounted(() => {
-      getDeaths();
-    });
-  }
+  onMounted() {
+    getDeaths();
+  },
 }
 
 </script>
