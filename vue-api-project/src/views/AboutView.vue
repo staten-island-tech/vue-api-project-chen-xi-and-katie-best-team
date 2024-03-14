@@ -4,8 +4,7 @@
   </div>
 </template>
 
-<script>
-import { onMounted } from "vue"
+<script >
 import { Chart as ChartJS, Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale } from 'chart.js'
 import apiChart from "@/components/apiChart.vue"
 ChartJS.register(Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale)
@@ -20,18 +19,12 @@ async function getDeaths(){
     console.log(error)
   }
 }
+getDeaths();
 export default {
   name: 'App',
   components: { apiChart },
-  data() {
-    return apiChart
-  },
-  async setup() {
-    onMounted(() => {
-      getDeaths();
-    });
-  }
 }
+
 </script>
 
 <style scoped>
