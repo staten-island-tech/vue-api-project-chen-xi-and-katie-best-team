@@ -13,27 +13,31 @@ ChartJS.register(Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale)
 
 
 export default {
+  name: "BarChart",
   components: { Bar },
   setup(){
-    const loaded = ref(true);
+    const loaded = ref();
     const death = ref([]);
 
-    
 async function getDeaths() {
   try {
     let get = await fetch("https://data.cityofnewyork.us/resource/jb7j-dtam.json");
     let data = await get.json();
     death.value = {
-      labels: data.deaths,
-      apiData: [{
-        label: "Common death",
-        data: data.value,
-      }]
+      chartData: {
+        labels: [data[1].leading_cause,],
+        apiData: [
+          {
+            label: 'Data One',
+            backgroundColor: '#f87979',
+            data: [data[1].deaths]
+          }
+        ]
+      }
     }
-    loaded.value = true;
-
-  
     console.log(death.value)
+    loaded.value ==  true
+  
   } catch (error) {
     console.log(error)
   }
@@ -41,10 +45,17 @@ async function getDeaths() {
 };
 onMounted(getDeaths)
 return{
-  death
+  death,
+  loaded
 }
-  }
+  },
+  options: {
+  responsive: true,
+  maintainAspectRatio: false
 }
+}
+
+
 </script>
 
 <style scoped>
