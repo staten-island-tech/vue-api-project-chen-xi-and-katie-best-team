@@ -1,15 +1,21 @@
 <template>
   <div>
-    <BarChart ref="death" />
+    <BarChart :data="chartData" :options="options" />
   </div>
 </template>
 
 <script>
 import BarChart from '@/components/BarChart.vue'
 
+
 export default {
   name: 'App',
-  components: { BarChart },
+  components: {
+    BarChart
+  },
+  data() {
+    return BarChart
+  }
 }
 
 </script>
