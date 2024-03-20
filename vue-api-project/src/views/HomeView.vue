@@ -1,21 +1,18 @@
 <template>
   <div>
-    <BarChart :data="chartData" :options="options" />
+    <barChart />
   </div>
 </template>
 
 <script>
-import BarChart from '@/components/BarChart.vue'
+import barChart from '@/components/barChart.vue'
 
 
 export default {
   name: 'App',
   components: {
-    BarChart
+    barChart
   },
-  data() {
-    return BarChart
-  }
 }
 
 </script>
