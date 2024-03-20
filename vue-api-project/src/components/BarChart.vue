@@ -1,6 +1,6 @@
 <template>
 <div class="container">
-    <Bar v-if="loaded" :data="chartData" /> 
+    <Bar v-if="loaded" :data="chartData" :options="chartOptions"/> 
   </div>
 </template>
 
@@ -15,6 +15,11 @@ ChartJS.register(Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale)
 export default {
   name: "BarChart",
   components: { Bar },
+  data(){
+    return{
+      chartData:[null]
+    }
+  },
   setup(){
     const loaded = ref();
     const death = ref([]);
@@ -35,8 +40,9 @@ async function getDeaths() {
         ]
       }
     }
+    this.chartData = death 
     console.log(death.value)
-    loaded.value ==  true
+    loaded.value === true
   
   } catch (error) {
     console.log(error)
@@ -49,7 +55,7 @@ return{
   loaded
 }
   },
-  options: {
+  chartOptions: {
   responsive: true,
   maintainAspectRatio: false
 }
