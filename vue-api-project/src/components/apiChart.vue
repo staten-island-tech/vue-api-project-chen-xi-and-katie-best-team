@@ -23,7 +23,7 @@ export default {
         let get = await fetch("https://data.cityofnewyork.us/resource/jb7j-dtam.json");
         let data = await get.json();
         const labels = [];
-          for (let i = 0; i < 5; i++) {
+          for (let i = 0; i < 10; i++) {
             if (data[i] && data[i].leading_cause) {
               labels.push(data[i].leading_cause);
           }
@@ -54,3 +54,10 @@ export default {
   },
   }
 </script>
+<style scoped>
+.container {
+  padding: 8rem;
+  margin: 0px auto;
+  
+}
+</style>
