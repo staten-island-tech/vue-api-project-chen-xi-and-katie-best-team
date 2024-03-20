@@ -1,11 +1,11 @@
 <template>
-    <div class="container">
-    <apiChart />
+  <div>
+    <testChart />
   </div>
 </template>
 
-<script>
-import { Chart as ChartJS, Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale } from 'chart.js'
+<script >
+/* import { Chart as ChartJS, Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale } from 'chart.js'
 import apiChart from "@/components/apiChart.vue"
 ChartJS.register(Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale)
 
@@ -25,8 +25,21 @@ export default {
   async mounted() {
     const data = await getDeaths()
     console.log(data);
-  }}
+  }
+}
+ */
+ import { Bar } from 'vue-chartjs'
+import { Chart as ChartJS, Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale } from 'chart.js'
+ChartJS.register(Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale)
+import testChart from '@/components/testChart.vue'
 
+export default {
+  name: 'App',
+  components: {
+    testChart,
+    Bar
+  },
+}
 </script>
 
 <style scoped>
