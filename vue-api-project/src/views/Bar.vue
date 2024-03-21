@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import barChart from '@/components/barChart.vue'
+import barChart from '@/components/BarChart.vue'
 
 
 export default {
