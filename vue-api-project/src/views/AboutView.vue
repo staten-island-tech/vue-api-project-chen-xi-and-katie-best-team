@@ -5,9 +5,6 @@
 </template>
 
 <script >
- import { Pie } from 'vue-chartjs'
-import { Chart as ChartJS, Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale } from 'chart.js'
-ChartJS.register(Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale)
 import pieChart from '@/components/pieChart.vue'
 
 export default {
@@ -20,12 +17,6 @@ export default {
 
 <style scoped>
 .container {
-  width: 80vw;
-  margin: 30px auto;
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
   align-items: center;
-  justify-content: space-around;
 }
 </style>
