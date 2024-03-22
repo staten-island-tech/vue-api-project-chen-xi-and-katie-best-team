@@ -33,3 +33,16 @@ a,
     padding: 0 2rem;
   }
 }
+nav {
+  text-align: center;
+}
+header {
+  text-align: center;
+  background-color: rgb(152, 212, 144);
+  margin-bottom: 1rem;
+  display: flex;
+  padding: 1rem;
+}
+body {
+  text-align: center;
+}

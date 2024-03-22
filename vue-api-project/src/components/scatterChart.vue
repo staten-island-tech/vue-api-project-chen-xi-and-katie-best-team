@@ -32,9 +32,9 @@ export default {
         const labels = [];
         const chartData = [];
         for (let i = 0; i < 100; i++) {
-          if (data[i] && data[i].deaths) {
+          if (data[i] && data[i].death_rate) {
             if (data[i].year >= 100) {
-              labels.push(data[i].deaths);
+              labels.push(data[i].death_rate);
 
 
               death.value = {
