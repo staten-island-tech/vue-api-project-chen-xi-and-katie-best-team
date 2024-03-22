@@ -32,17 +32,15 @@ export default {
         const labels = [];
         const chartData = [];
         for (let i = 0; i < 100; i++) {
-          if (data[i] && data[i].deaths) {
+          if (data[i] && data[i].leading_cause) {
             if (data[i].year >= 100) {
-              labels.push(data[i].deaths);
-
-
+              labels.push(data[i].leading_cause);
               death.value = {
                 labels: labels,
                 datasets: [
                   {
-                    label: 'Scatter',
-                    backgroundColor: '#4484eb',
+                    label: 'Death Amounts',
+                    backgroundColor: '#f87979',
                     data: chartData
                   }
                 ]

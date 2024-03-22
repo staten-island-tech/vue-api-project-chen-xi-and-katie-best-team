@@ -25,12 +25,14 @@ export default {
         const colors = [];
         const labels = [];
         const chartData = []; 
-        let letters = '0123456789ABCDEF'
-        let color = "#"
+        function getColor(){
+        let color = Math.floor(Math.random() * 16777216).toString(16);
+          colors.push('#000000'.slice(0, -color.length) + color)
+        };
           for (let i = 0; i < 100; i++) {
             if (data[i] && data[i].leading_cause) {
               if(data[i].deaths >= 100){
-              colors.push(color += letters[Math.floor(Math.random() * 16)])
+              getColor();
               labels.push(data[i].leading_cause);
 
         death.value = {
@@ -55,7 +57,6 @@ export default {
     }
 
     onMounted(getDeaths);
-
     return {
       death,
       loaded,
