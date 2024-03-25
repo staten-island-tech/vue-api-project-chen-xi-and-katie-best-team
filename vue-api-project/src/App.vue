@@ -6,10 +6,10 @@ import { RouterLink, RouterView } from 'vue-router'
 <template>
   <header>
       <nav>
-        <h1>Leading Causes of Deaths</h1>
         <RouterLink to="/">Bar Chart</RouterLink>
         <RouterLink to="/pie">Pie Chart</RouterLink>
         <RouterLink to="/scatter">Scatter Chart</RouterLink>
+        <h1>Leading Causes of Deaths</h1>
       </nav>
   </header>
   <RouterView/>
