@@ -16,7 +16,4 @@ export default {
 </script>
 
 <style scoped>
-.container {
-  align-items: center;
-}
 </style>
