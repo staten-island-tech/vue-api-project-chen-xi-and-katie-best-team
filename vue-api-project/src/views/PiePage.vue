@@ -1,7 +1,5 @@
 <template>
-  <div>
     <pieChart />
-  </div>
 </template>
 
 <script >

@@ -1,7 +1,5 @@
 <template>
-  <div class="container">
-    <Bar v-if="loaded" :data="death" :width="1000" :height ="500"/>
-  </div>
+    <Bar class = "place" v-if="loaded" :data="death" :width="900" :height ="500"/>
 </template>
 
 <script>
@@ -59,7 +57,7 @@ export default {
 </script>
 
 <style scoped>
-.container{
-  margin-top:2rem;
+.place{
+  margin-top:5rem;
 }
 </style>

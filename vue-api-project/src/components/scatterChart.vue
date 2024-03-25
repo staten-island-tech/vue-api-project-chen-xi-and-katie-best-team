@@ -1,7 +1,5 @@
 <template>
-  <div class="container">
-    <Scatter v-if="loaded" :data="death" :width="300" :height="300" />
-  </div>
+    <Scatter class = "place" v-if="loaded" :data="death" :width="300" :height="300" />
 </template>
 
 <script>
@@ -41,7 +39,7 @@ export default {
                 labels: labels,
                 datasets: [
                   {
-                    label: 'Death Amounts',
+                    label: 'Death Amounts Compared to Death Rate',
                     backgroundColor: '#f87979',
                     data: chartData
                   }
@@ -67,8 +65,9 @@ export default {
   },
 }
 
-
-
 </script>
 
-<style scoped></style>
+<style scoped>
+.place{
+  margin-top:5rem;
+}</style>

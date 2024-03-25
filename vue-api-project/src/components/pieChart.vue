@@ -1,7 +1,5 @@
 <template>
-  <div class="container" >
-    <Pie v-if="loaded" :data="death" :width="300" :height="300"/>
-  </div>
+    <Pie class ="place" v-if="loaded" :data="death" :width="300" :height="300"/>
 </template>
 
 <script>
@@ -66,5 +64,7 @@ export default {
 </script>
 
 <style scoped>
-
+.place{
+  margin-top:5rem;
+}
 </style>
