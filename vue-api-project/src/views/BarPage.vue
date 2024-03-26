@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="bar">
     <barChart />
   </div>
 </template>
@@ -18,9 +18,10 @@ export default {
 </script>
 
 <style scoped>
-div {
-  width: 100%;
-  align-content: center;
+.bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-align: center;
 }
 </style>

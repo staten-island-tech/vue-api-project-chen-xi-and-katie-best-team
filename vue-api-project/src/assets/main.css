@@ -8,6 +8,9 @@
   font-weight: normal;
   font-family: "Roboto Mono", monospace;
 }
+body {
+  background-color: #2A2B2A;
+}
 
 a,
 .green {
