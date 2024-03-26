@@ -1,5 +1,7 @@
 <template>
+  <div>
       <scatterChart />
+    </div>
   </template>
   
   <script>
@@ -16,4 +18,7 @@
   </script>
   
   <style scoped>
+  div {
+    width: 100%;
+  }
   </style>

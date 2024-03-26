@@ -1,5 +1,5 @@
 <template>
-    <Scatter class = "place" v-if="loaded" :data="death" :width="300" :height="300" />
+    <Scatter class = "place" v-if="loaded" :data="death" :width="600" :height="600" />
 </template>
 
 <script>
@@ -15,7 +15,8 @@ import {
 import { Scatter } from 'vue-chartjs'
 
 ChartJS.register(LinearScale, PointElement, LineElement, Tooltip, Legend)
-
+ChartJS.defaults.font.family = "Roboto Mono, monospace";
+ChartJS.defaults.font.size = 15;
 export default {
   name: "scatterChart",
   components: { Scatter },
@@ -68,5 +69,5 @@ export default {
 
 <style scoped>
 .place{
-  margin-top:5rem;
+  margin-top:10rem;
 }</style>

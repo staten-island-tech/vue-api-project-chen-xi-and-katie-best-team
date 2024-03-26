@@ -1,5 +1,7 @@
 <template>
+  <div>
     <barChart />
+  </div>
 </template>
 
 <script>
@@ -16,4 +18,9 @@ export default {
 </script>
 
 <style scoped>
+div {
+  width: 100%;
+  align-content: center;
+  text-align: center;
+}
 </style>

@@ -1,12 +1,13 @@
 <template>
-    <Pie class ="place" v-if="loaded" :data="death" :width="300" :height="300"/>
+    <Pie class ="place" v-if="loaded" :data="death" :width="800" :height="800"/>
 </template>
 
 <script>
 import { ref, onMounted } from "vue";
 import { Pie } from 'vue-chartjs';
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
-
+ChartJS.defaults.font.family = "Roboto Mono, monospace";
+ChartJS.defaults.font.size = 15;
 ChartJS.register(ArcElement, Tooltip, Legend);
 
 export default {
@@ -65,6 +66,9 @@ export default {
 
 <style scoped>
 .place{
-  margin-top:5rem;
+  margin-top:7rem;
+  padding: 3rem;
+  align-items: center;
 }
+
 </style>

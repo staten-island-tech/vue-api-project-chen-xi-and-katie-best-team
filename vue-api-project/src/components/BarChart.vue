@@ -1,5 +1,7 @@
 <template>
-    <Bar class = "place" v-if="loaded" :data="death" :width="900" :height ="500"/>
+  <div class = "chart-container">
+    <Bar class = "place" v-if="loaded" :data="death" :width="1200" :height ="800"/>
+</div>
 </template>
 
 <script>
@@ -8,7 +10,8 @@ import { Bar } from 'vue-chartjs';
 import { Chart as ChartJS, Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale } from 'chart.js';
 
 ChartJS.register(Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale);
-
+ChartJS.defaults.font.family = "Roboto Mono, monospace";
+ChartJS.defaults.font.size = 14;
 export default {
   name: "barChart",
   components: { Bar },
@@ -57,7 +60,14 @@ export default {
 </script>
 
 <style scoped>
-.place{
-  margin-top:5rem;
+.chart-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.chart-container .place {
+  margin-top: 10rem;
 }
 </style>

@@ -1,8 +1,10 @@
 <template>
+  <div>
     <pieChart />
+  </div>
 </template>
 
-<script >
+<script>
 import pieChart from '@/components/pieChart.vue'
 
 export default {
@@ -14,4 +16,7 @@ export default {
 </script>
 
 <style scoped>
+div {
+  width: 100%;
+}
 </style>
