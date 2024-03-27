@@ -9,32 +9,37 @@
   font-family: "Roboto Mono", monospace;
 }
 body {
-  background-color: #2A2B2A;
+  background-color: #444444;
 }
 
-a,
-.green {
+a {
   text-decoration: none;
-  color: hsla(160, 100%, 37%, 1);
-  transition: 0.4s;
-  padding: 3px;
+  transition: 400ms cubic-bezier(0.7, -0.6, 0.3, 1.2) text-shadow,
+    400ms cubic-bezier(0.7, -0.6, 0.3, 1.2) letter-spacing;
+  color: #7295e2;
+  padding: 2rem;
+  font-size: 16px;
 }
 
 @media (hover: hover) {
+  a a:before {
+    width: 100%;
+    transform: scaleX(0);
+    transition: 400ms cubic-bezier(0.7, -0.6, 0.3, 1.2) transform;
+  }
+  
   a:hover {
-    background-color: hsla(160, 100%, 37%, 0.2);
+    letter-spacing: 4px;
+  }
+  
+  a:hover:before {
+    transform: scaleX(1);
   }
 }
 
 @media (min-width: 1024px) {
   body {
     display: flex;
-  }
-
-  #app {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding: 0 2rem;
   }
 }
 nav {

@@ -1,5 +1,7 @@
 <template>
-    <Scatter class = "place" v-if="loaded" :data="death" :width="600" :height="600" />
+  <div class = 'container'>
+    <Scatter class = "place" v-if="loaded" :data="death" :width="500" :height="400" />
+  </div>
 </template>
 
 <script>
@@ -16,7 +18,6 @@ import { Scatter } from 'vue-chartjs'
 
 ChartJS.register(LinearScale, PointElement, LineElement, Tooltip, Legend)
 ChartJS.defaults.font.family = "Roboto Mono, monospace";
-ChartJS.defaults.font.size = 15;
 export default {
   name: "scatterChart",
   components: { Scatter },
@@ -40,7 +41,7 @@ export default {
                 datasets: [
                   {
                     label: 'Death Amounts Compared to Death Rate',
-                    backgroundColor: '#f87979',
+                    backgroundColor: '#a2b8e9',
                     data: chartData
                   }
                 ]
@@ -69,5 +70,10 @@ export default {
 
 <style scoped>
 .place{
-  margin-top:10rem;
-}</style>
+  border: 2px solid #a2b8e9;
+  padding: 2rem;
+}
+.container {
+  width: 110%;
+}
+</style>

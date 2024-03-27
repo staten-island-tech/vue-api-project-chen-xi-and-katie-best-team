@@ -22,25 +22,30 @@ header {
   width: 100%;
   top: 0;
   left: 0;
-  background-color: rgb(152, 212, 144);
+  background-color: #8dadee;
   display: flex;
   padding: 0.8rem;
   justify-content: space-between;
   align-items: center;
-}
-
-nav {
-  display: flex;
+  color: #17386d;
+  filter: drop-shadow(0px 20px 20px #83a4e6);
 }
 
 nav a {
   padding: 0 1.5rem;
   text-decoration: none;
-  color: var(--color-text);
+  color: #17386d;
+  font-size: 18px;
+  position: relative;
+  user-select: none;
+  font-size: 20px;
+  cursor: pointer;
+  margin: 0 20px;
 }
 
 nav a.router-link-exact-active {
   font-weight: bold;
+  color: rgb(6, 58, 172);
 }
 
 nav a.router-link-exact-active:hover {
