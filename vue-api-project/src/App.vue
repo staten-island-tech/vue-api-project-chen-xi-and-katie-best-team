@@ -28,7 +28,7 @@ header {
   justify-content: space-between;
   align-items: center;
   color: #17386d;
-  filter: drop-shadow(0px 20px 20px #83a4e6);
+  filter: drop-shadow(0px 20px 40px #83a4e6);
 }
 
 nav a {
