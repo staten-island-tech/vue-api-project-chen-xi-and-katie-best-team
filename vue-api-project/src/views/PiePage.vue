@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>Circle Chart: Deaths Based on Diseases (1000 Deaths)</h1>
+    <h1>Circle Chart: Deaths Based on Diseases</h1>
   </div>
   <div>
     <pieChart />

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>Bar Chart: Deaths Per Diseases (100 Deaths)</h1>
+    <h1>Bar Chart: Leading Causes of Death</h1>
   </div>
   <div class="bar">
     <barChart />

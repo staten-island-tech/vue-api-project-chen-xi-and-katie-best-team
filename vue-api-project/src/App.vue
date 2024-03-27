@@ -6,9 +6,9 @@ import { RouterLink, RouterView } from 'vue-router'
 <template>
   <header>
       <nav>
-        <RouterLink to="/">Bar Chart</RouterLink>
-        <RouterLink to="/pie">Pie Chart</RouterLink>
-        <RouterLink to="/scatter">Scatter Chart</RouterLink>
+        <RouterLink to="/">Leading Causes of Death</RouterLink>
+        <RouterLink to="/pie">Deaths Based on Diseases</RouterLink>
+        <RouterLink to="/scatter">Amount vs. Rate</RouterLink>
       </nav>
       <img src="\skull.png" alt="skull">
       <h1>Leading Causes of Deaths in NYC</h1>

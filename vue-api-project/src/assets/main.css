@@ -29,7 +29,7 @@ a {
   }
   
   a:hover {
-    letter-spacing: 4px;
+    letter-spacing: 3px;
   }
   
   a:hover:before {
